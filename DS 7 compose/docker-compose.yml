@@ -1,0 +1,13 @@
+version: '2'
+services:
+  web:
+    image: "miwildfly:7"
+    ports:
+     - "8080:8080"
+     - "9990:9990"
+    links:
+     - basedatos:mimariadb
+  basedatos:
+    image: "mibasedatos:latest"
+    ports:
+     - "3306:3306"
